@@ -8,12 +8,10 @@ public class Department implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
-
     private Integer id;
     private String name;
 
-    public Department(){
-
+    public Department() {
     }
 
     public Department(Integer id, String name) {
@@ -42,7 +40,7 @@ public class Department implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Department that = (Department) o;
-        return id.equals(that.id) && name.equals(that.name);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name);
     }
 
     @Override
